@@ -2,10 +2,10 @@
 Date created 8/7/2020
 
 ### Project Title
-Elliot's Udacity python bikeshare code 
+Elliot's Udacity python bikeshare code
 
 ### Description
-Describe what your project is about and what it does
+Code that analyzes bikeshare data 
 
 ### Files used
 Include the files used
