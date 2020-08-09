@@ -25,36 +25,36 @@ def get_filters():
         if city not in CITY_DATA:
             print('Looks like that\'s not one of the cities!')
         else:
-            break 
+            break
 
         print('you choose: ', city)
 
 
-    # get user input for month 
-    while True:        
+    # get user input for month
+    while True:
         month = input('Which month: january, february, march, april, may, june? Or all?')
         if month not in MONTH_LIST:
             print('Looks like that\'s not one of the months!')
         else:
-            break 
-           
+            break
+
 
         print('you choose: ', month)
 
 
 
 
-    # get user input for day of week 
+    # get user input for day of week
     while True:
         day = input('Which day: monday, tuesday, wednesday, thursday, friday, saturday, sunday? Or all?')
         if day not in DAY_LIST:
             print('Looks like that\'s not one of the days!')
         else:
-            break 
+            break
 
         print('you choose: ', day)
 
-    return city, month, day     
+    return city, month, day
     print('-'*40)
 
 
@@ -182,12 +182,12 @@ def user_stats(df, city):
     user_types = df['User Type'].value_counts()
     print("The count of user types are: \n" + str(user_types))
 
-    
+
     # TO DO: Display counts of gender
     if city == 'chicago' or city == 'new york city':
         # TO DO: Display counts of gender
         gender = df['Gender'].value_counts()
-        print("The count of user gender from the given fitered data is: \n" + str(gender))
+        print("The count of user's gender for", city.upper(), "is: \n" + str(gender))
 
         # TO DO: Display earliest, most recent, and most common year of birth
         earliest_birth = int(df['Birth Year'].min())
@@ -196,7 +196,7 @@ def user_stats(df, city):
         print('Earliest birthdate for a user is: {}'.format(earliest_birth))
         print('Most recent birthdate for a user is: {}'.format(most_recent_birth))
         print('Most common birthdate for all user is: {}'.format(most_common_birth))
-        
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -210,7 +210,7 @@ def main():
         station_stats(df, city)
         trip_duration_stats(df, city)
         user_stats(df, city)
-        
+
 
         restart = input('\nWould you like to run the date again? Enter yes or no.\n')
         if restart.lower() != 'yes':
